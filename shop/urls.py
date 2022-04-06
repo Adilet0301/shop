@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from applications.account.views import ActivationView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('product/', include('applications.product.urls')),
-    path('account/', include('applications.account.urls'))
+    path('account/', include('applications.account.urls')),
 ]

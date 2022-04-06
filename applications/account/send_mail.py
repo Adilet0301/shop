@@ -7,5 +7,7 @@ def send_confirmation_email(code, email):
     send_mail(
         'Привет',
         full_link,
+        'osmonalievadilet10@gmail.com',
         [email]
     )
+
