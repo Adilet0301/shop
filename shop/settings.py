@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'applications.account', #1
     'rest_framework.authtoken',
     'drf_yasg',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -153,8 +154,12 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     # 'PAGE_SIZE': 2,
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated' # AllowAny
-    ]
+        'rest_framework.permissions.AllowAny' # AllowAny
+    ],
+
+    # 'DEFAULT_FILTER_BACKENDS':[
+    #     'django_filters.rest_framework.DjangoFilterBackend'
+    # ]
 }
 
 AUTH_USER_MODEL = 'account.CustomUser'
