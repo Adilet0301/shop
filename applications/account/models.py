@@ -32,16 +32,16 @@ class UserManager(BaseUserManager): #8
         return self._create_user(email, password, **extra_fields)
 
 
-class CustomUser(AbstractUser):  #2
+class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=100)
     username = None
     is_active = models.BooleanField(default=False) #5
     activation_code = models.CharField(max_length=100, blank=True)
-    objects = UserManager() #7
+    objects = UserManager()
 
 
-    USERNAME_FIELD = 'email'  #6
+    USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
     def __str__(self):
